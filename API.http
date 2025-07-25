@@ -1,0 +1,59 @@
+@host = https://localhost:5143
+@apiKey = Genesis-API-Key-2025
+
+### Cálculo de CDB - válido
+POST {{host}}/calculadora/calcular
+Content-Type: application/json
+API-Key: {{apiKey}}
+
+{
+  "valorInicial": 1000,
+  "prazoMeses": 12
+}
+
+###
+
+### Cálculo inválido - valor inicial negativo
+POST {{host}}/calculadora/calcular
+Content-Type: application/json
+API-Key: {{apiKey}}
+
+{
+  "valorInicial": -1000,
+  "prazoMeses": 12
+}
+
+###
+
+### Cálculo inválido - prazo muito curto
+POST {{host}}/calculadora/calcular
+Content-Type: application/json
+API-Key: {{apiKey}}
+
+{
+  "valorInicial": 1000,
+  "prazoMeses": 1
+}
+
+###
+
+### Teste sem API Key - deve retornar 401
+POST {{host}}/calculadora/calcular
+Content-Type: application/json
+
+{
+  "valorInicial": 1000,
+  "prazoMeses": 12
+}
+
+###
+
+### Teste com API Key inválida - deve retornar 401
+POST {{host}}/calculadora/calcular
+Content-Type: application/json
+API-Key: Invalid-Key
+
+{
+  "valorInicial": 1000,
+  "prazoMeses": 12
+} 

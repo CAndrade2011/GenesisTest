@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  genesis-api:
+    image: image-genesis-api
+    build:
+      context: .
+      dockerfile: API/Dockerfile
+    ports:
+      - "5143:5143"  
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5143  
+    networks:
+      - genesis-network
+
+  genesis-frontend:
+    image: image-genesis-frontend
+    build:
+      context: ./Angular/cdb-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    networks:
+      - genesis-network
+    command: npm start
+
+networks:
+  genesis-network:
+    driver: bridge
