@@ -1,0 +1,25 @@
+<div class="container" style="max-width: 400px; margin: 40px auto; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px #0001; background: #fff;">
+  <h2>Cálculo de CDB</h2>
+  <form (ngSubmit)="calcular()" #cdbForm="ngForm" autocomplete="off">
+    <div style="margin-bottom: 1rem;">
+      <label for="valorInicial">Valor Inicial (R$):</label>
+      <input type="number" step="0.01" id="valorInicial" name="valorInicial" [(ngModel)]="valorInicial" required class="form-control" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+    </div>
+    <div style="margin-bottom: 1rem;">
+      <label for="prazoMeses">Prazo (meses):</label>
+      <input type="number" id="prazoMeses" name="prazoMeses" [(ngModel)]="prazoMeses" required class="form-control" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+    </div>
+    <button type="submit" [disabled]="loading" style="width: 100%; padding: 0.75rem; font-size: 1rem; background: #a100ff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Calcular</button>
+  </form>
+
+  <div *ngIf="loading" style="margin-top: 1rem; color: #a100ff;">Calculando...</div>
+  <div *ngIf="errors.length" style="margin-top: 1rem; color: #d32f2f;">
+    <div *ngFor="let error of errors">
+      <span *ngFor="let line of error.split('\n')">{{ line }}<br /></span>
+    </div>
+  </div>
+  <div *ngIf="resultado" style="margin-top: 1rem; background: #f6f6ff; padding: 1rem; border-radius: 4px;">
+    <h4>Resultado:</h4>
+    <pre>{{ resultado | json }}</pre>
+  </div>
+</div>
