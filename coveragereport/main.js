@@ -215,9 +215,9 @@ var assemblies = [
     "classes": [
       { "name": "API.Controllers.CalculadoraController", "rp": "API_CalculadoraController.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 36, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "API.Extensions.ApiKeyMiddlewareExtensions", "rp": "API_ApiKeyMiddlewareExtensions.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "API.Middleware.ApiKeyMiddleware", "rp": "API_ApiKeyMiddleware.html", "cl": 24, "ucl": 9, "cal": 33, "tl": 41, "cb": 7, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "API.Middleware.ApiKeyMiddleware", "rp": "API_ApiKeyMiddleware.html", "cl": 24, "ucl": 0, "cal": 24, "tl": 41, "cb": 7, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "API.SwaggerExamples.CdbCommandExample", "rp": "API_CdbCommandExample.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Program", "rp": "API_Program.html", "cl": 0, "ucl": 74, "cal": 74, "tl": 88, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Program", "rp": "API_Program.html", "cl": 0, "ucl": 69, "cal": 69, "tl": 88, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "Application",
@@ -236,7 +236,7 @@ var assemblies = [
   {
     "name": "Domain.Services",
     "classes": [
-      { "name": "Domain.Services.Calculadoras.CdbCalculadora", "rp": "Domain.Services_CdbCalculadora.html", "cl": 17, "ucl": 0, "cal": 17, "tl": 31, "cb": 8, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Domain.Services.Calculadoras.CdbCalculadora", "rp": "Domain.Services_CdbCalculadora.html", "cl": 19, "ucl": 0, "cal": 19, "tl": 33, "cb": 8, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
@@ -245,17 +245,9 @@ var metrics = [{ "name": "Crap Score", "abbreviation": "crp", "explanationUrl": 
 var historicCoverageExecutionTimes = [];
 
 var riskHotspotMetrics = [
-      { "name": "Crap Score", "explanationUrl": "https://googletesting.blogspot.de/2011/02/this-code-is-crap.html" },
-      { "name": "Cyclomatic complexity", "explanationUrl": "https://en.wikipedia.org/wiki/Cyclomatic_complexity" },
 ];
 
 var riskHotspots = [
-  {
-    "assembly": "API", "class": "API.Middleware.ApiKeyMiddleware", "reportPath": "API_ApiKeyMiddleware.html", "methodName": "InvokeAsync()", "methodShortName": "InvokeAsync()", "fileIndex": 0, "line": 17,
-    "metrics": [
-      { "value": 72, "exceeded": true },
-      { "value": 8, "exceeded": false },
-    ]},
 ];
 
 var branchCoverageAvailable = true;
