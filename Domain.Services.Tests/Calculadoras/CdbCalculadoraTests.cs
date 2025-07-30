@@ -36,7 +36,7 @@ public class CdbCalculadoraTests
         var resultado = calculadora.Calcular(parametros);
 
         Assert.True(resultado.ValorBruto > 10);
-        Assert.InRange(resultado.ValorLiquido, 7, 8);
+        Assert.InRange(resultado.ValorLiquido, 10.1m, 10.5m);
     }
 
     [Trait("CdbCalculadora", "Valores Grandes")]
@@ -66,7 +66,12 @@ public class CdbCalculadoraTests
         var resultado = calculadora.Calcular(parametros);
         var valorBruto = resultado.ValorBruto;
         var valorLiquido = resultado.ValorLiquido;
-        var aliquotaCalculada = Math.Round(1 - (valorLiquido / valorBruto), 3);
+        var valorInicial = parametros.ValorInicial;
+        
+        // A alíquota é aplicada apenas sobre o ganho
+        var valorGanho = valorBruto - valorInicial;
+        var valorGanhoLiquido = valorLiquido - valorInicial;
+        var aliquotaCalculada = Math.Round(1 - (valorGanhoLiquido / valorGanho), 3);
 
         Assert.Equal(aliquotaEsperada, aliquotaCalculada, 3);
     }

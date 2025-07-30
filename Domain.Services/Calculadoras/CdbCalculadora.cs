@@ -16,7 +16,9 @@ public class CdbCalculadora : ICdbCalculadora
             valorBruto *= (1 + (CDI * TB));
 
         decimal aliquota = ObterAliquota(parametros.PrazoMeses);
-        decimal valorLiquido = valorBruto * (1 - aliquota);
+        decimal valorGanho = valorBruto - parametros.ValorInicial;
+        decimal valorGanhoMenosImposto = valorGanho * (1 - aliquota);
+        decimal valorLiquido = parametros.ValorInicial + valorGanhoMenosImposto;
 
         return new CdbResultadoCalculado(valorBruto, valorLiquido);
     }
